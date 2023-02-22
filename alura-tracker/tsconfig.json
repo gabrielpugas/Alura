@@ -36,8 +36,5 @@
   ],
   "exclude": [
     "node_modules"
-  ],
-  "vue/multi-word-component-names": ["error", {
-    "ignores": []
-  }]
+  ]
 }
