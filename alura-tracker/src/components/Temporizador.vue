@@ -1,8 +1,8 @@
 <template>
   <div class="is-flex is-align-items-center is-justify-content-space-between">
     <Cronometro :tempoEmSegundos="tempoEmSegundos" />
-    <Botao @clicado="iniciar" icone="fas fa-play" texto="play" />
-    <Botao @clicado="finalizar" icone="fas fa-stop" texto="stop" />
+    <Botao @clicado="iniciar" icone="fas fa-play" texto="play" :desabilitado="cronometroRodando"/>
+    <Botao @clicado="finalizar" icone="fas fa-stop" texto="stop" :desabilitado="!cronometroRodando"/>
   </div>
 </template>
 
@@ -35,7 +35,7 @@ export default defineComponent({
     finalizar() {
       this.cronometroRodando = false;
       clearInterval(this.cronometro);
-      this.$emit("aoFinalizarTemporizador",this.tempoEmSegundos)
+      this.$emit("aoFinalizarTemporizador", this.tempoEmSegundos)
       this.tempoEmSegundos = 0
     },
   },
