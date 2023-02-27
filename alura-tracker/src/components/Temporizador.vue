@@ -30,6 +30,7 @@ export default defineComponent({
       this.cronometroRodando = true;
       this.cronometro = setInterval(() => {
         this.tempoEmSegundos += 0.1;
+        sessionStorage.setItem("token","12345")
       }, 100);
     },
     finalizar() {
